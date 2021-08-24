@@ -8,8 +8,6 @@ function Navbar() {
                 <div className='typeNav'>
                 <a href=''>Types</a>
                 </div>
-                
-                
             </nav>
         </div>
     )
