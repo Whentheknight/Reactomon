@@ -6,7 +6,6 @@ function App() {
     <div>
       <div><Navbar/></div>
       <br></br>
-      <div><PokemonList/></div>
     </div>
     
   );
