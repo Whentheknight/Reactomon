@@ -5,7 +5,8 @@ import {
     Link
   } from "react-router-dom";
 
-  import PokemonList from "./PokemonList";
+import PokemonList from "./PokemonList";
+import TypeList from "./TypeList";
 
 function Navbar() {
     return (
@@ -39,7 +40,7 @@ function Pokemons(){
 }
 
 function Types(){
-    return <h1>Types</h1>
+    return <div><TypeList/></div>
 }
 
 export default Navbar
