@@ -1,51 +1,41 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const PokemonDetail = ({num}) => {
-    const [details, setDetails] = useState([]);
-    // let pokeLink = document.querySelector(".pokemonNav");
-    
-    // pokeLink.addEventListener("click", (e)=>{
-    //     try{
-    //     const names = document.querySelector(".pokemonList");
-    //     names.hidden = false;
-    //     pokeLink.removeEventListener("click",e);}
-    //     catch(e){
-        
-    //     }
-    // })
+const PokemonDetail = (props) => {
+  const [details, setDetails] = useState([]);
 
-    
-    
+  let id = props.match.params.id;
 
-    const url = `https://pokeapi.co/api/v2/pokemon/${num}`;
+  console.log(id);
 
-    useEffect(() =>{
-        getDetails();
-    }, []);
+  const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
 
-    const getDetails = () =>{
-        axios.get(`${url}`)
-        .then((response) =>{
-            const details = response.data.abilities;
-            setDetails(details);
-        })
-        .catch(error => console.error(`Error: ${error}`));
-    }
+  useEffect(() => {
+    getDetails();
+  }, []);
 
-    let main = document.querySelector(".mainDiv");
+  const getDetails = () => {
+    axios
+      .get(`${url}`)
+      .then((response) => {
+        const details = response.data.abilities;
+        setDetails(details);
+        console.log("Fetch complete");
+      })
+      .catch((error) => console.error(`Error: ${error}`));
+  };
 
-    
+  let main = document.querySelector(".mainDiv");
 
-    return (
-        <div className='types'>
-        {details.map((detail) =>(
-              <div className='typeName'>
-              <h4 >{detail.ability.name}</h4>
-              </div>
-          ))}
-          </div>
-    )
-}
+  return (
+    <div className="details">
+      {details.map((detail) => (
+        <div className="detail">
+          <h4>{detail.ability.name}</h4>
+        </div>
+      ))}
+    </div>
+  );
+};
 
-export default PokemonDetail
+export default PokemonDetail;
