@@ -48,6 +48,7 @@ nav {
   font-size: small;
   text-align: center;
   vertical-align: bottom;
+  cursor: pointer;
 }
 
 .types {

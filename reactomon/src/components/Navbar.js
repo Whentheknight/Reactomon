@@ -1,3 +1,4 @@
+import { useParams } from "react-router";
 import {
     BrowserRouter as Router,
     Switch,
@@ -7,8 +8,12 @@ import {
 
 import PokemonList from "./PokemonList";
 import TypeList from "./TypeList";
+import PokemonDetail from "./PokemonDetail";
+
+
 
 function Navbar() {
+
     return (
         <Router>
         <div className='navbar'>
@@ -36,11 +41,14 @@ function Navbar() {
 }
 
 function Pokemons(){
-    return <div><PokemonList/></div>
+    return <div className="pokemonList"><PokemonList/></div>
 }
 
 function Types(){
-    return <div><TypeList/></div>
+    return <div className="typeList"><TypeList/></div>
 }
+
+
+
 
 export default Navbar
