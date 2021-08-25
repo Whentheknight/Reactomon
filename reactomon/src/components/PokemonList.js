@@ -21,8 +21,8 @@ function PokemonList() {
 
     return (
         <div className='names'>
-      {pokemons.map((pokemon) =>(
-            <div className='pokemonName'>
+      {pokemons.map((pokemon, index) =>(
+            <div className='pokemonName' id={index+1}>
             <h2 >{pokemon.name}</h2>
             </div>
         ))}
