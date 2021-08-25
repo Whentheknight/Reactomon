@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 function TypeList() {
+  console.log("Type");
   const [types, setTypes] = useState([]);
 
   const url = "https://pokeapi.co/api/v2/type";

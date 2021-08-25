@@ -25,12 +25,13 @@ function App() {
           />
 
           <Route
-            path="/pokemons/:id"
+            path="/pokemon/:id"
             render={(props) => <PokemonDetail {...props} />}
             exact
           />
         </Switch>
       </div>
+      <br></br>
     </Router>
   );
 }

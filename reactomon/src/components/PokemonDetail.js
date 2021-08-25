@@ -3,7 +3,7 @@ import axios from "axios";
 
 const PokemonDetail = (props) => {
   const [details, setDetails] = useState([]);
-
+  console.log("Details");
   let id = props.match.params.id;
 
   console.log(id);
