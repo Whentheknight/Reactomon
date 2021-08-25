@@ -25,8 +25,6 @@ const PokemonDetail = (props) => {
       .catch((error) => console.error(`Error: ${error}`));
   };
 
-  let main = document.querySelector(".mainDiv");
-
   return (
     <div className="details">
       {details.map((detail) => (
