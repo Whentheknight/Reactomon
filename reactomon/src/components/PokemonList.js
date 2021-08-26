@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import styled from "styled-components";
 
 import { Link } from "react-router-dom";
 
 function PokemonList() {
   const [pokemons, setPokemons] = useState([]);
-  const [loadMore, setLoadMore] = useState('https://pokeapi.co/api/v2/pokemon?limit=10');
+  const [loadMore, setLoadMore] = useState('https://pokeapi.co/api/v2/pokemon?limit=16');
   
 
 
@@ -20,7 +20,7 @@ function PokemonList() {
         const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`)
         const data = await res.json()
         setPokemons(currentList => [...currentList, data])
-        pokemons.sort((a, b)=> a.id - a.id)
+        pokemons.sort((a, b)=> a.id - b.id)
       })
       
     }
@@ -34,14 +34,22 @@ function PokemonList() {
   return (
     <div className="names">
       {pokemons.map((pokemon, index) => (
+        <Link to={`/pokemon/${index + 1}`}>
         <div className="pokemonName" key={`${index + 1}`}>
-          <Link to={`/pokemon/${index + 1}`}>{pokemon.name}</Link>
           <img src={pokemon.sprites.other.dream_world.front_default}></img>
+          <br></br>
+          <Paragh><p>{pokemon.name}</p></Paragh>
         </div>
+        </Link>
       ))}
     </div>
+    
   );
 }
 
+const Paragh = styled.p`
+font-size: 1rem;
+margin-top: -2rem;
+`;
 
 export default PokemonList;
