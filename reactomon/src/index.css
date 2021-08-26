@@ -5,6 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("./img/background.jpg");
+  background-position-y: -14rem;
+  background-position-x: -5rem;
 }
 
 code {
@@ -13,8 +16,8 @@ code {
 }
 
 nav {
-  margin-top: 15rem;
-  margin-left: 25rem;
+  padding-top: 15rem;
+  margin-left: 50rem;
   display: block;
   flex-wrap: wrap;
   max-width: 15rem;
@@ -33,7 +36,8 @@ nav {
   flex-wrap: wrap;
   width: auto;
   height: auto;
-  padding-left: 10rem;
+  padding-left: 38rem;
+  padding-right: 39rem;
 }
 
 .pokemonName {
@@ -55,8 +59,11 @@ nav {
   display: flex;
   flex-wrap: wrap;
   width: auto;
-  margin-left: 10rem;
-  max-width: 50rem;
+  margin-left: 45rem;
+  padding-right: 20rem;
+  max-width: 0rem;
+  max-height: 17rem;
+  flex-direction: column;
 }
 
 .typeName {
@@ -76,4 +83,26 @@ nav {
 
 .typeName h4 {
   margin-top: 0.1rem;
+}
+
+.details{
+  display: flex;
+  flex-wrap: wrap;
+  width: auto;
+  margin-left: 10rem;
+  max-width: 50rem;
+}
+
+.pokemonDetail{
+  margin-top: 2rem;
+  margin-right: 1rem;
+  max-height: 1rem;
+  min-width: 4rem;
+  flex-wrap: wrap;
+  border-radius: 3px;
+  background: rgb(223, 238, 7);
+  box-shadow: 0 5px 2px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+  font-size: small;
+  text-align: center;
+  padding-bottom: 0.5rem;
 }

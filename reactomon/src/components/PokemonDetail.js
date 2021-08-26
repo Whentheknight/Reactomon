@@ -3,7 +3,6 @@ import axios from "axios";
 
 const PokemonDetail = (props) => {
   const [details, setDetails] = useState([]);
-  console.log("Details");
   let id = props.match.params.id;
 
   console.log(id);
@@ -28,7 +27,7 @@ const PokemonDetail = (props) => {
   return (
     <div className="details">
       {details.map((detail) => (
-        <div className="detail">
+        <div className="pokemonDetail">
           <h4>{detail.ability.name}</h4>
         </div>
       ))}
