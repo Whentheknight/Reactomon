@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import { useContext } from "react";
+import ThemeContext from "../context/ThemeContext";
 
 const PokemonDetail = (props) => {
   const [details, setDetails] = useState([]);
+  const theme = useContext(ThemeContext)[0];
   let id = props.match.params.id;
 
   const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
@@ -18,27 +21,51 @@ const PokemonDetail = (props) => {
   };
 
   return (
-    <div className="details">
-      {details.map((detail) => (
-        <PokeCard className="pokemonDetails">
-          <PokePic
-            src={detail.sprites.other.dream_world.front_default}
-          ></PokePic>
-          <div className="height">
-            <Text>Height: {detail.height / 10} m</Text>
-          </div>
-          <div className="weight">
-            <Text>Weight: {detail.weight / 10} kg</Text>
-          </div>
-          <div className="species">
-            <Text>Species: {detail.species.name}</Text>
-          </div>
-        </PokeCard>
-      ))}
+    <div>
+      {theme === "spin" ? (
+        <div className="details">
+          {details.map((detail) => (
+            <Diver>
+              <PokeCard className="pokemonDetails">
+                <PokePic
+                  src={detail.sprites.other.dream_world.front_default}
+                ></PokePic>
+                <div className="height">
+                  <Text>Height: {detail.height / 10} m</Text>
+                </div>
+                <div className="weight">
+                  <Text>Weight: {detail.weight / 10} kg</Text>
+                </div>
+                <div className="species">
+                  <Text>Species: {detail.species.name}</Text>
+                </div>
+              </PokeCard>
+            </Diver>
+          ))}
+        </div>
+      ) : (
+        <div className="details">
+          {details.map((detail) => (
+            <PokeCard className="pokemonDetails">
+              <PokePic
+                src={detail.sprites.other.dream_world.front_default}
+              ></PokePic>
+              <div className="height">
+                <Text>Height: {detail.height / 10} m</Text>
+              </div>
+              <div className="weight">
+                <Text>Weight: {detail.weight / 10} kg</Text>
+              </div>
+              <div className="species">
+                <Text>Species: {detail.species.name}</Text>
+              </div>
+            </PokeCard>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
-
 
 const PokeCard = styled.div`
   margin-top: 3rem;
@@ -54,7 +81,6 @@ const PokeCard = styled.div`
   vertical-align: bottom;
 `;
 
-
 const PokePic = styled.img`
   height: 173px;
   width: 228px;
@@ -63,6 +89,18 @@ const PokePic = styled.img`
 
 const Text = styled.h1`
   font-size: x-large;
+`;
+
+const spinning = keyframes`
+0% {
+  transform: rotate(0) translate3D(-50%, -50%, 0);
+}
+100% {
+  transform: rotate(360deg) translate3D(-50%, -50%, 0);
+}`;
+
+const Diver = styled.div`
+  animation: ${spinning} 1s infinite;
 `;
 
 export default PokemonDetail;
