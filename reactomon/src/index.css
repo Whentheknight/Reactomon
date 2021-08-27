@@ -1,4 +1,4 @@
-@import url('http://fonts.cdnfonts.com/css/pokemon-solid');
+@import url("http://fonts.cdnfonts.com/css/pokemon-solid");
 
 body {
   margin: 0;
@@ -10,7 +10,7 @@ body {
   background-image: url("./img/background2.jpg");
   background-position-y: -14rem;
   background-position-x: -5rem;
-  font-family: 'Pokemon Solid', sans-serif;
+  font-family: "Pokemon Solid", sans-serif;
 }
 
 code {
@@ -78,7 +78,8 @@ nav {
   flex-wrap: wrap;
   border-radius: 3px;
   background: rgb(213, 228, 0);
-  box-shadow: 0 5px 2px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+  box-shadow: 0 5px 2px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%),
+    0 1px 5px 0 rgb(0 0 0 / 12%);
   font-size: large;
   text-align: center;
   padding-bottom: 1.5rem;
@@ -88,7 +89,7 @@ nav {
   margin-top: 0.1rem;
 }
 
-.details{
+.details {
   display: flex;
   flex-wrap: wrap;
   width: auto;
@@ -96,7 +97,7 @@ nav {
   max-width: 50rem;
 }
 
-.pokemonDetail{
+.pokemonDetail {
   margin-top: 2rem;
   margin-right: 1rem;
   max-height: 1rem;
@@ -104,23 +105,29 @@ nav {
   flex-wrap: wrap;
   border-radius: 3px;
   background: rgb(213, 228, 0);
-  box-shadow: 0 5px 2px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+  box-shadow: 0 5px 2px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%),
+    0 1px 5px 0 rgb(0 0 0 / 12%);
   font-size: small;
   text-align: center;
   padding-bottom: 0.5rem;
 }
 
-img{
+img {
   height: 120px;
- width: 120px;
+  width: 120px;
 }
 
-.navbar{
+.navbar {
   background-image: url("./img/Pokédex_logo.png");
   background-repeat: no-repeat;
   background-position-x: center;
 }
-a{
+a {
   text-decoration: none;
   margin-top: -2rem;
 }
+
+.names {
+  animation: aliceTumbling infinite 3s linear;
+}
+
