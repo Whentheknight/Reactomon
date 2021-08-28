@@ -40,7 +40,7 @@ nav {
   flex-wrap: wrap;
   width: auto;
   height: auto;
-  padding-left: 42rem;
+  padding-left: 41.3rem;
   padding-right: 39rem;
 }
 
@@ -95,6 +95,7 @@ nav {
   width: auto;
   margin-left: 10rem;
   max-width: 50rem;
+  margin-left: 50rem;
 }
 
 .pokemonDetail {
@@ -130,4 +131,3 @@ a {
 .names {
   animation: aliceTumbling infinite 3s linear;
 }
-

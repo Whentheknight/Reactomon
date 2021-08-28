@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import ThemeContext from "../context/ThemeContext";
+import { useContext } from "react";
+import styled, { keyframes } from "styled-components";
+
 function TypeList() {
+  const theme = useContext(ThemeContext)[0];
+
   const [types, setTypes] = useState([]);
 
   const url = "https://pokeapi.co/api/v2/type";
@@ -20,14 +26,40 @@ function TypeList() {
   };
 
   return (
-    <div className="types">
-      {types.map((type) => (
-        <div className="typeName">
-          <h4>{type.name}</h4>
+    <div>
+      {theme === "spin" ? (
+        <div className="types">
+          {types.map((type) => (
+            <Diver className="typeName">
+              <h4>{type.name}</h4>
+            </Diver>
+          ))}
         </div>
-      ))}
+      ) : (
+        <div className="types">
+          {types.map((type) => (
+            <div className="typeName">
+              <h4>{type.name}</h4>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
+
+const spinning = keyframes`
+0% {
+  transform: rotate(0);
+  transfrom-origin: center center;
+}
+100% {
+  transform: rotate(360deg);
+  transfrom-origin: center center;
+}`;
+
+const Diver = styled.div`
+  animation: ${spinning} 1s infinite;
+`;
 
 export default TypeList;
