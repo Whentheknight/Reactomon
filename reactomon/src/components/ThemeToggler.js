@@ -7,7 +7,7 @@ const themeTogglerStyle = {
 };
 
 const spanStyle = {
-  backgroundColor: "black",
+  fontSize: "xx-large",
 };
 const ThemeToggler = () => {
   const [themeMode, setThemeMode] = useContext(ThemeContext);
@@ -19,7 +19,7 @@ const ThemeToggler = () => {
       }}
     >
       <span style={spanStyle} title="Let's spin">
-        {themeMode === "noSpin" ? "⚡️" : "🛑"}
+        {themeMode === "noSpin" ? "🔄" : "🛑"}
       </span>
     </div>
   );

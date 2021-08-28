@@ -7,7 +7,6 @@ import ThemeContext from "../context/ThemeContext";
 function PokemonList() {
   const theme = useContext(ThemeContext)[0];
 
-
   const [pokemons, setPokemons] = useState([]);
   const [loadMore, setLoadMore] = useState(
     "https://pokeapi.co/api/v2/pokemon?limit=16"
@@ -84,10 +83,12 @@ const Paragh = styled.p`
 
 const spinning = keyframes`
 0% {
-  transform: rotate(0) translate3D(-50%, -50%, 0);
+  transform: rotate(0);
+  transfrom-origin: center center;
 }
 100% {
-  transform: rotate(360deg) translate3D(-50%, -50%, 0);
+  transform: rotate(360deg);
+  transfrom-origin: center center;
 }`;
 
 const Diver = styled.div`

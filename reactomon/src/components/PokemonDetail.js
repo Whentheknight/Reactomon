@@ -69,7 +69,6 @@ const PokemonDetail = (props) => {
 
 const PokeCard = styled.div`
   margin-top: 3rem;
-  margin-left: 39.5rem;
   min-height: 22rem;
   min-width: 17rem;
   border-radius: 3px;
@@ -92,12 +91,15 @@ const Text = styled.h1`
 `;
 
 const spinning = keyframes`
-0% {
-  transform: rotate(0) translate3D(-50%, -50%, 0);
+  0% {
+    transform: rotate(0);
+    transfrom-origin: center center;
+  }
+  100% {
+    transform: rotate(360deg);
+    transfrom-origin: center center;
 }
-100% {
-  transform: rotate(360deg) translate3D(-50%, -50%, 0);
-}`;
+`;
 
 const Diver = styled.div`
   animation: ${spinning} 1s infinite;

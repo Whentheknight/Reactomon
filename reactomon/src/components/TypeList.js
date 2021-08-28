@@ -50,10 +50,12 @@ function TypeList() {
 
 const spinning = keyframes`
 0% {
-  transform: rotate(0) translate3D(-50%, -50%, 0);
+  transform: rotate(0);
+  transfrom-origin: center center;
 }
 100% {
-  transform: rotate(360deg) translate3D(-50%, -50%, 0);
+  transform: rotate(360deg);
+  transfrom-origin: center center;
 }`;
 
 const Diver = styled.div`
